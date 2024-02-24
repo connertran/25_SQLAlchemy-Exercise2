@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 db= SQLAlchemy()
 
 def connect_db(app):
@@ -25,5 +26,19 @@ class User(db.Model):
     def greet(self):
         return f"Hi My first_name is {self.first_name} and my last name is {self.last_name}"
     
-# class Post(db.Model):
-#     """Post."""
+class Post(db.Model):
+    """Post."""
+    __tablename__ = "posts"
+
+    id = db.Column(db.Integer,
+                   primary_key = True,
+                   autoincrement=True)
+    title = db.Column(db.String,
+                      nullable=False)
+    content = db.Column(db.String,
+                        nullable=False)
+    created_at = db.Column(db.DateTime, default=db.func.current_timestamp(), nullable=False)
+    user_id = db.Column(db.Integer,
+                        db.ForeignKey('users.id'),
+                        nullable=False)
+    

@@ -21,7 +21,15 @@
 <form action="/user/delete/{{user_info.id}}" method="POST"><button id="delete-btn">Delete</button>
 </form>
 </div>
-<a href="/">Go Back</a>
+<h2>Posts</h2>
+<div>
+    {%for post in posts%}
+    <li>{{post.content}}
+    </li>
+    {%endfor%}
+</div>
+<form action="/users/{{user_info.id}}/posts/new"><button>Add Post</button>
+</form>
 </div>
 </div>
 

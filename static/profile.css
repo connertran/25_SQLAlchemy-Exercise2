@@ -1,0 +1,55 @@
+.big-div{
+    display: flex;
+    flex-direction: row;
+}
+.pic-div{
+    margin-right: 10px;
+}
+.profile-pic{
+    width: 150px;
+    height: 140px;
+    object-fit: cover;
+}
+.details-div{
+    display: flex;
+    flex-direction: column;
+}
+.button-div{
+    display: flex;
+    flex-direction: row;
+}
+#edit-btn{
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+#edit-btn:hover {
+    background-color: rgb(84, 84, 251);
+    cursor: pointer;
+}
+#edit-btn:active {
+    background-color: black;
+}
+  
+#delete-btn{
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+}
+#delete-btn:hover {
+    background-color: rgb(253, 76, 76);
+    cursor: pointer;
+}
+#delete-btn:active {
+    background-color: black;
+}

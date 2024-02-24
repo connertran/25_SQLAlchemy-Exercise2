@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block title%}{{user_info.first_name}}{%endblock%}
+{%block style%}
+<link rel="stylesheet" href="/static/profile.css">{%endblock%}
+{%block content%}
+
+<div class="big-div">
+    <div class="pic-div">
+<img src="{{user_info.image_url}}" alt="Profile picture" class="profile-pic">
+</div>
+<div class="details-div">
+<h1>{{user_info.first_name}}
+    {%if user_info.last_name%}
+    {{ user_info.last_name}}
+    {%endif%}
+</h1>
+<div class="button-div">
+<form action="/user/edit/{{user_info.id}}" method= "POST">
+    <button id="edit-btn">Edit</button>
+</form>
+<form action="/user/delete/{{user_info.id}}" method="POST"><button id="delete-btn">Delete</button>
+</form>
+</div>
+<a href="/">Go Back</a>
+</div>
+</div>
+
+{%endblock%}

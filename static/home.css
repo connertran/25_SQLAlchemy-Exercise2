@@ -1,0 +1,16 @@
+#add-user{
+    background-color: grey;
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+}
+#add-user:hover {
+    background-color: darkgrey;
+    cursor: pointer;
+}
+#add-user:active {
+    background-color: black;
+}

@@ -1,0 +1,23 @@
+#add{
+    background-color: rgb(3, 189, 3);
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+}
+#add:hover {
+    background-color: rgb(3, 206, 3);
+    cursor: pointer;
+}
+#add:active {
+    background-color: black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}

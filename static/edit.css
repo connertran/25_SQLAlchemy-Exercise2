@@ -1,0 +1,57 @@
+#cancel-btn{
+    background-color: white;
+    color: rgb(171, 104, 179);
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(171, 104, 179);
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    top: -30px;
+    right: 80px;
+}
+#cancel-btn:hover {
+    background-color: rgb(171, 104, 179);
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+#cancel-btn:active {
+    background-color: black;
+}
+#save-btn{
+    background-color: rgb(3, 189, 3);
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+}
+#save-btn:hover {
+    background-color: rgb(3, 206, 3);
+    cursor: pointer;
+}
+#save-btn:active {
+    background-color: black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    width: 460px;
+}
+.save-div{
+    display: flex;
+    width: 460px;
+    flex-direction: column;
+    align-items: end;
+}
+#cancel-form{
+    width: 460px;
+    position: relative;
+}

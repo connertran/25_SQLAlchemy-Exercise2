@@ -24,7 +24,7 @@
 <h2>Posts</h2>
 <div>
     {%for post in posts%}
-    <li>{{post.content}}
+    <li><a href="/posts/{{post.id}}">{{post.title}}</a>
     </li>
     {%endfor%}
 </div>

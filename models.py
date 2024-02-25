@@ -41,4 +41,6 @@ class Post(db.Model):
     user_id = db.Column(db.Integer,
                         db.ForeignKey('users.id'),
                         nullable=False)
-    
+    user= db.relationship('User')
+    def __repr__(self):
+        return f"Post title: {self.title} and post content: {self.content}"

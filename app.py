@@ -27,6 +27,7 @@ def show_home_page():
 def show_form():
     """Show add user form"""
     return render_template('new-user.html')
+
 @app.route('/users/db', methods=['POST'])
 def saving_user_info():
     """saving user's info to the data base and show the user's profile"""
@@ -64,6 +65,7 @@ def change_form_info(user_id):
     """show form for editing info"""
     user = User.query.get(user_id)
     return render_template("edit-form.html", user = user)
+
 @app.route('/user/changed/<int:user_id>', methods = ['POST'])
 def change_user_info(user_id):
     """Update user's info in the database"""
@@ -100,16 +102,19 @@ def receive_post_info(user_id):
     db.session.add(p)
     db.session.commit()
     return redirect(f'/user/{user.id}')
+
 @app.route('/posts/<int:post_id>')
 def show_post_detail(post_id):
     """show details of a post"""
     post = Post.query.get(post_id)
     return render_template('post_details.html', post=post)
+
 @app.route('/posts/<int:post_id>/edit')
 def show_post_edit_form(post_id):
     """show form to edit a post"""
     post = Post.query.get(post_id)
     return render_template('post-edit-page.html', post=post)
+
 @app.route('/posts/<int:post_id>/edit', methods=["POST"])
 def save_post_changes_to_db(post_id):
     """Saving post changes to db"""
@@ -121,6 +126,7 @@ def save_post_changes_to_db(post_id):
     db.session.add(post)
     db.session.commit()
     return redirect(f'/posts/{post_id}')
+
 @app.route('/posts/<int:post_id>/delete', methods=['POST'])
 def delete_post_from_db(post_id):
     """delete a post from a db"""

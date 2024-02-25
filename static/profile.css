@@ -7,7 +7,7 @@
 }
 .profile-pic{
     width: 150px;
-    height: 140px;
+    height: 200px;
     object-fit: cover;
 }
 .details-div{
@@ -51,5 +51,27 @@
     cursor: pointer;
 }
 #delete-btn:active {
+    background-color: black;
+}
+.posts-list{
+    margin-top: -30px;
+}
+
+#add-post-btn{
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    border-style: none;
+    padding: 0 20px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+#add-post-btn:hover {
+    background-color: rgb(84, 84, 251);
+    cursor: pointer;
+}
+#add-post-btn:active {
     background-color: black;
 }

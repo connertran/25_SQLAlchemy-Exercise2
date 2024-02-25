@@ -22,13 +22,15 @@
 </form>
 </div>
 <h2>Posts</h2>
-<div>
+<div class="posts-list">
+    <ul>
     {%for post in posts%}
     <li><a href="/posts/{{post.id}}">{{post.title}}</a>
     </li>
     {%endfor%}
+    </ul>
 </div>
-<form action="/users/{{user_info.id}}/posts/new"><button>Add Post</button>
+<form action="/users/{{user_info.id}}/posts/new"><button id="add-post-btn">Add Post</button>
 </form>
 </div>
 </div>

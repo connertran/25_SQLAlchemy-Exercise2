@@ -1,11 +1,14 @@
 {%extends 'base.html'%}
 {%block title%}Edit Post{%endblock%}
 {%block style%}
-<link rel="stylesheet" href="">{%endblock%}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/edit-post.css">{%endblock%}
 {%block content%}
+<div>
 <h1>Edit Post</h1>
 
-<form action="/posts/{{post.id}}/edit" method="POST">
+<form id="info-form" action="/posts/{{post.id}}/edit" method="POST">
+    
     <label for="title">Title</label>
     <input type="text" id="title" name="title" placeholder="{{post.title}}" required>
     
@@ -13,8 +16,10 @@
     <input type="text" id="post-content" name="post-content" placeholder="{{post.content}}" required>
 
     <div class="save-div">
-    <button type="submit" id="save-btn">Save</button></div>
+    <button type="submit" id="save-btn" class="btn btn-success">Save</button></div>
 </form>
-<form action="/posts/{{post.id}}" id="cancel-form"><button type="submit" id="cancel-btn">Cancel</button></form>
+<form action="/posts/{{post.id}}" id="cancel-form"><button type="submit" id="cancel-btn" class="btn btn-outline-secondary">Cancel</button></form>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 {%endblock%}

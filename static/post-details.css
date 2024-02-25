@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.big-div{
+    width: 500px;
+}
+
+.buttons-div{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+}
+#cancel-btn, #edit-btn, #delete-btn{
+    margin-right: 3px;
+}

@@ -25,7 +25,8 @@ class User(db.Model):
                           nullable= False)
     def greet(self):
         return f"Hi My first_name is {self.first_name} and my last name is {self.last_name}"
-    
+    user= db.relationship('Post')    
+
 class Post(db.Model):
     """Post."""
     __tablename__ = "posts"

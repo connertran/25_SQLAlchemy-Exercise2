@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+
+}
+#info-form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.save-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 10px;
+}
+#cancel-form{
+    position: relative;
+}
+#cancel-btn{
+    position: absolute;
+    right: 65px;
+    top: -38px;
+}

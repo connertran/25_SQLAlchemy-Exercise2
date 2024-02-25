@@ -49,10 +49,18 @@ class UserViewsTestCase(TestCase):
             self.assertEqual(resp.status_code,200)
             self.assertIn('<button class="btn btn-primary" id="edit-btn">Edit</button>',html)
 
+    # def test_post_edit_page(self):
+    #     with app.test_client() as client:
+    #         resp = client.get(f'/posts/{self.post_id}/edit')
+    #         html = resp.get_data(as_text=True)
+
+    #         self.assertEqual(resp.status_code,200)
+    #         self.assertIn('<label for="post-content">Post Content</label>',html)
     def test_post_edit_page(self):
         with app.test_client() as client:
             resp = client.get(f'/posts/{self.post_id}/edit')
             html = resp.get_data(as_text=True)
 
-            self.assertEqual(resp.status_code,200)
-            self.assertIn('<label for="post-content">Post Content</label>',html)    
+            self.assertEqual(resp.status_code, 200)
+            self.assertIn('<label for="post-content">Post Content</label>', html)
+            self.assertIn('<input type="text" id="post-content" name="post-content"', html)

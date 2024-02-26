@@ -56,6 +56,13 @@ def show_details(user_id):
 @app.route('/user/delete/<int:user_id>', methods=['POST'])
 def delete_user(user_id):
     """deleting a user from the db"""
+
+    # Have to delete all the rows in posts_tags before deleting the posts
+    post_lists=Post.query.filter(Post.user_id == user_id).all()
+    for the_post in post_lists:
+        PostTag.query.filter(PostTag.post_id == the_post.id).delete()
+        db.session.commit()
+
     # Have to delete all the posts before deleting the user
     # because each post has a foreignKey(user's id)
     Post.query.filter(Post.user_id == user_id).delete()

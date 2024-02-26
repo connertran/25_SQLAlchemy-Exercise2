@@ -21,3 +21,13 @@ body{
     display: inline-block;
     font-weight: bold;
 }
+a{
+    background-color: rgb(74, 127, 244);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    border-style: none;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 6px;
+}

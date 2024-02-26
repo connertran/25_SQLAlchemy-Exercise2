@@ -9,7 +9,7 @@
 <h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
 <p>By {{post.user.first_name}} {%if post.user.last_name%}{{post.user.last_name}}{%endif%} on {{post.friendly_date }}</p>
-<p class="tags-list">Tags</p>
+<p class="tags-list">Tags: </p>
 {%for tag in all_tags%}
 <a href="/tags/{{tag.id}}">{{tag.name}}</a>
 {%endfor%}

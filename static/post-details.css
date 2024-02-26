@@ -17,3 +17,7 @@ body{
 #cancel-btn, #edit-btn, #delete-btn{
     margin-right: 3px;
 }
+.tags-list{
+    display: inline-block;
+    font-weight: bold;
+}

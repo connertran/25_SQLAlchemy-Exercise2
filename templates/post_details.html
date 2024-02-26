@@ -8,7 +8,11 @@
 <div class="big-div">
 <h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
-<p>By {{post.user.first_name}} {%if post.user.last_name%}{{post.user.last_name}}{%endif%}</p>
+<p>By {{post.user.first_name}} {%if post.user.last_name%}{{post.user.last_name}}{%endif%} on {{post.friendly_date }}</p>
+<p class="tags-list">Tags</p>
+{%for tag in all_tags%}
+<a href="/tags/{{tag.id}}">{{tag.name}}</a>
+{%endfor%}
 <div class="buttons-div">
 <form action="/user/{{post.user.id}}"><button id="cancel-btn" class="btn btn-outline-primary">Cancel</button></form>
 <form action="/posts/{{post.id}}/edit">

@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%}List Tag{%endblock%}
+{%block style%}
+<link rel="stylesheet" href="">{%endblock%}
+{%block content%}
+<h1>Tags</h1>
+<div class="tags-list">
+    <ul>
+        {%for tag in all_tags%}
+        <li><a href="/tags/{{tag.id}}">{{tag.name}}</a></li>
+        {%endfor%}
+    </ul>
+</div>
+
+<form action="/tags/new">
+    <button type="submit">Add Tags</button>
+</form>
+{%endblock%}

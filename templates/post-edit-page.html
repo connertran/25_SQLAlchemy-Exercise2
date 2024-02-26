@@ -15,6 +15,22 @@
     <label for="post-content">Post Content</label>
     <input type="text" id="post-content" name="post-content" placeholder="{{post.content}}" required>
 
+    <div class="form-check">
+        {% for tag in tags %}
+        <div>
+          <input class="form-check-input"
+                 type="checkbox"
+                 value="{{ tag.id }}"
+                 id="tag_{{ tag.id }}"
+                 {% if tag in post.tags %}checked{% endif %}
+                 name="tags">
+          <label class="form-check-label" for="tag_{{ tag.id }}">
+            {{ tag.name }}
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+
     <div class="save-div">
     <button type="submit" id="save-btn" class="btn btn-success">Save</button></div>
 </form>

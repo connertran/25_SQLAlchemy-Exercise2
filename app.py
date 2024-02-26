@@ -6,7 +6,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, User, Post
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly2'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = 'chicken123'
@@ -56,6 +56,11 @@ def show_details(user_id):
 @app.route('/user/delete/<int:user_id>', methods=['POST'])
 def delete_user(user_id):
     """deleting a user from the db"""
+    # Have to delete all the posts before deleting the user
+    # because each post has a foreignKey(user's id)
+    Post.query.filter(Post.user_id == user_id).delete()
+    db.session.commit()
+
     user = User.query.filter_by(id = user_id).delete()
     db.session.commit()
     return redirect('/')

@@ -1,17 +1,20 @@
 from unittest import TestCase
 
-from app import app
-from models import db, User, Post
+from app import create_app
+from models import db, connect_db, User, Post
 
-# Use test database and don't clutter tests with SQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly_test2'
-app.config['SQLALCHEMY_ECHO'] = False
+app = create_app("blogly_test", testing=True)  # this is a different instance of the app
+connect_db(app)
 
-# Make Flask errors be real errors, rather than HTML pages with error info
-app.config['TESTING'] = True
+# # Use test database and don't clutter tests with SQL
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly_test2'
+# app.config['SQLALCHEMY_ECHO'] = False
 
-# This is a bit of hack, but don't use Flask DebugToolbar
-app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-toolbar']
+# # Make Flask errors be real errors, rather than HTML pages with error info
+# app.config['TESTING'] = True
+
+# # This is a bit of hack, but don't use Flask DebugToolbar
+# app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-toolbar']
 
 db.drop_all()
 db.create_all()
